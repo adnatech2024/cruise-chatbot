@@ -129,10 +129,11 @@ function startListening() {
   
    appendMessage("Bot", `🎙️ Listening in ${selectedLang === "hi-IN" ? "हिंदी" : "English"}...`, "bot");
 
- const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+ //const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
   recognition.lang = selectedLang;
   recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
+  recognition.maxAlternatives = 5;
   recognition.start();
  
     recognition.onresult = (event) => {
