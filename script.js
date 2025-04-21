@@ -120,9 +120,9 @@ function getBotResponse(text, lang) {
 
 function startListening() {
   
-  // const lecture = new SpeechSynthesisUtterance('hello');
-  // lecture.volume = 0;
-  // speechSynthesis.speak(lecture);
+   const lecture = new SpeechSynthesisUtterance('hello');
+   lecture.volume = 0;
+   speechSynthesis.speak(lecture);
   const langSelect = document.getElementById("lang");
   const selectedLang = langSelect.value;
  
